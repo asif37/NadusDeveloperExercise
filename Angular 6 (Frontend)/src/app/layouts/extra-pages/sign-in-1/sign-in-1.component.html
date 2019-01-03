@@ -1,0 +1,34 @@
+<div class="site-container site-login">
+  <div class="main-content">
+    <div class="main-content-wrap">
+      <div class="container" style="color: white;background:white;width:400px;padding:0px;">
+        <label class="signHeader">Sign In</label>
+        <div style="display: block; padding: 1.375rem; position: relative;">
+          <form  [formGroup]="signInForm">
+          <mat-form-field>
+            <input style=" width: 350px;" matInput formControlName="email" placeholder="User Name " value="" required type="email">
+          </mat-form-field>
+          <mat-error>
+            <span *ngIf="!signInForm.get('email').valid && signInForm.get('email').touched">Please enter valid email!</span>
+          </mat-error>
+  
+          <mat-form-field>
+            <input style=" width: 350px;margin-top: 10px;" matInput formControlName="password" placeholder="Password" value="" type="password" required>
+          </mat-form-field>
+          <mat-error>
+            <span *ngIf="signInForm.get('password').hasError('required') && signInForm.get('password').touched">Please enter password!</span>
+          </mat-error>
+          <div class="text-left mb-module" style="color:rgb(143, 146, 143);">
+            <mat-checkbox formControlName="rememberMe">
+              Keep me signed in
+            </mat-checkbox>
+            <a style="    margin-left: 70px;" (click)="forgotPage()" >Forgot Password</a>
+          </div>
+          <button class="ni-btn ni-btn-block ni-btn-accent" [disabled]="!signInForm.valid" (click)="onSubmit()">Sign in</button>
+        </form>
+      </div>
+    </div>
+      <div class="app-overlay"></div>
+    </div>
+</div>
+</div>

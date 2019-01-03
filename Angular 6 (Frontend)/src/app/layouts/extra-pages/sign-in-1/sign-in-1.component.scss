@@ -1,0 +1,130 @@
+@import '../../../../assets/sass/variable';
+
+:host {
+  height: 100%;
+  width: 100%;
+  .mat-input-element
+  {
+    color: black;
+  }
+  .main-content {
+    // overflow-x: hidden;
+    // overflow-y: auto;
+    // padding: $navbar-height 0 0 $vertical-navbar-width;
+    // transition: padding .2s $animation;
+    // min-height: 600px;
+    @media #{$max991} {
+      padding-left: 0;
+    }
+    .button4 {border-radius: 12px;}
+    .input {border-radius: 12px;};
+    .button {
+      background-color: rgb(143, 146, 143);
+      border: none;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+  }
+    .main-content-wrap {
+      // height: calc(100% - #{$module-rem * 4});
+       height: auto;
+    }
+  }
+
+  .ni-card {
+    margin: 0 auto;
+    max-width: 400px;
+
+    /deep/ .card-wrap {
+      border: 0;
+    }
+    form {
+      button {
+        width: 100%;
+      }
+      .additional-info {
+        background: rgba(#000,.1);
+        margin: $module-rem  2 (-($module-rem  2)) (-($module-rem * 2));
+        padding: $module-rem $module-rem * 2;
+
+        .divider {
+          border-left: 1px solid rgba(#000,.2);
+          display: inline-block;
+          height: 18px;
+          margin: 0 10px;
+          vertical-align: bottom;
+        }
+      }
+    }
+  }
+}
+
+.site-login .ni-btn-accent{
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: Josefin Sans,sans-serif;
+  font-size: 1rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.375;
+  outline: none;
+  padding: .34375rem 1.375rem;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  transition: background .2s ease-in-out,border .2s ease-in-out,color .2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  will-change: background,border,color;
+  -webkit-appearance: none;
+  background: #2196f3;
+  color: #fff;
+  width:100%;
+}
+.signHeader{
+  background: #e5e6e9;
+  border-radius: 3px 3px 0 0;
+  color: #000;
+  display: block;
+  margin: 0;
+  padding: .6875rem 1.375rem;
+  position: relative;
+  font-size: 1.3571429rem;
+  line-height: 1.21;
+}
+.site-container .main-content{
+  display: table;
+  height: 100%;
+  padding: 0px;
+  table-layout: fixed;
+  width: 100%;
+}
+.site-container .main-content .main-content-wrap{
+  background: url(../../../../assets/content/login-bg.jpg) 50% 50% no-repeat;
+  background-size: cover;
+  display: table-cell;
+  padding: ($module-rem * 2) 0;
+  vertical-align: middle;
+  color:black;
+  height: 100%;
+  width: 100%;
+}

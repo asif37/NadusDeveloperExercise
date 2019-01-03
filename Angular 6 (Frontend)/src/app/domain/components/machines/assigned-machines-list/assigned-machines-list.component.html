@@ -1,0 +1,89 @@
+<mat-toolbar-row>
+  <div class="col col-lg-12 text-center">
+    <span>
+      <h5>{{pageTitle}} </h5>
+    </span>
+  </div>
+</mat-toolbar-row>
+<div class="row">
+    <div class="md-form mb-5">
+        <label data-error="wrong" data-success="right" for="orangeForm-name">Select Vendor</label>                    
+   <select class="form-control" [ngModel]="selectedVendorId" (change)="selectVendor($event)">
+    <option *ngFor="let item of vendorList" [value]="item.id">
+      {{item.name}}
+    </option>
+  </select>
+
+    </div>
+</div>
+
+<div *ngIf="isMobile == false" style="margin-top: 20px" class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Serial No</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Select Product to Buy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productsList;let i=index;">
+        <td>{{product.productName}}</td>
+        <td>{{product.serialNumber}}</td>
+        <td>{{product.price}}</td>
+        <td>
+        <select class="form-control" (change)="quantityChange($event)">
+            <option>Please Select Quantity</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+      </td>
+        <td>
+            <mat-checkbox  (change)="SelectUnselectProduct($event,product)">&nbsp;</mat-checkbox>
+        </td>
+        <!-- <td>
+          <i *ngIf="machine.productAuditStatus==='d'" (click)="openQuestionDialog(machine);" style="cursor: pointer;" matTooltip="Click to edit"
+            class="material-icons">edit</i>
+
+          <i *ngIf="machine.productAuditStatus!=='d'" style="cursor: pointer;" matTooltip="Click to add machine data" (click)="openQuestionDialog(machine)"
+            class="material-icons">library_add</i>
+          <i (click)="LoadMachineAllNotesList(machine);" style="cursor: pointer;" matTooltip="View machine all Notes" class="material-icons">view_list</i>
+          <i (click)="aadNote(machine);" style="cursor: pointer;" matTooltip="Click to add note" class="material-icons">note_add</i>
+          </td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<h4>My Orders list</h4>
+
+<div *ngIf="isMobile == false" style="margin-top: 20px" class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Order #</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of ordersList;let i=index;">
+        <td>{{order.id}}</td>
+        <td>{{order.productId}}</td>
+        <td>{{order.quantity}}</td>
+        <td>{{order.toatlPrice}}</td>
+        <td>
+            <input type="button" (click)="placeOrder()" value="Place Order">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
